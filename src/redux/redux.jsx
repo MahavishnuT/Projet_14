@@ -10,10 +10,24 @@ export const employeeSlice = createSlice({
   },
 })
 
+export const modalSlice = createSlice({
+  name: 'modal',
+  initialState: { isSaved : false },
+  reducers: {
+    showModal: (state) => {
+      state.isSaved = !state.isSaved
+    },
+  },
+})
+
+
+
 export const { addEmployee } = employeeSlice.actions
+export const { showModal } = modalSlice.actions
 
 export const store = configureStore({
   reducer: {
     employee: employeeSlice.reducer,
+    modal: modalSlice.reducer,
   },
 })

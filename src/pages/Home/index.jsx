@@ -1,21 +1,53 @@
-import "./home.scss"
-import { states } from "../../data/USStates"
+import './home.scss'
+import { states } from '../../data/USStates'
+import { useDispatch, useSelector } from 'react-redux'
+import { addEmployee, showModal } from '../../redux/redux'
+import { Link } from 'react-router-dom'
 
 function Home() {
+  const dispatch = useDispatch()
+  const selectorEmployee = useSelector((state) => state.employee)
+  const selectorModal = useSelector((state) => state.modal)
+
   function submitEmployee(event) {
     event.preventDefault()
-    const birthdate = document.querySelector("#date-of-birth")
-    const department = document.querySelector("#department")
-    console.log(typeof birthdate.value, typeof department.value)
 
+    const firstName = document.getElementById('first-name')
+    const lastName = document.getElementById('last-name')
+    const dateOfBirth = document.getElementById('date-of-birth')
+    const startDate = document.getElementById('start-date')
+    const department = document.getElementById('department')
+    const street = document.getElementById('street')
+    const city = document.getElementById('city')
+    const state = document.getElementById('state')
+    const zipCode = document.getElementById('zip-code')
+
+    const employee = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      dateOfBirth: dateOfBirth.value,
+      startDate: startDate.value,
+      department: department.value,
+      street: street.value,
+      city: city.value,
+      state: state.value,
+      zipCode: zipCode.value,
+    }
+    console.log(employee)
+
+    dispatch(showModal())
+    dispatch(addEmployee(employee))
+
+    console.log(selectorEmployee)
   }
+
   return (
     <section>
       <div className="title">
         <h1>HRnet</h1>
       </div>
       <div className="container">
-        <a href="employee-list.html">View Current Employees</a>
+        <Link to="/employeesList">View Current Employees</Link>
         <h2>Create Employee</h2>
         <form action="#" id="create-employee" onSubmit={submitEmployee}>
           <label htmlFor="first-name">First Name</label>
@@ -41,18 +73,13 @@ function Home() {
 
             <label htmlFor="state">State</label>
             <select name="state" id="state">
-              {
-                states.map((state) => {
-                  return (
-                    <option
-                          key={state.abbreviation}
-                          value={state.name}
-                        >
-                          {state.name}
-                        </option>
-                  )
-                })
-              }
+              {states.map((state) => {
+                return (
+                  <option key={state.abbreviation} value={state.name}>
+                    {state.name}
+                  </option>
+                )
+              })}
             </select>
 
             <label htmlFor="zip-code">Zip Code</label>
@@ -67,10 +94,12 @@ function Home() {
             <option>Human Resources</option>
             <option>Legal</option>
           </select>
-        <button type="submit">Save</button>
+          <button type="submit">Save</button>
         </form>
-
       </div>
+      {selectorModal.isSaved && (
+        <div>Employee saved in the database! *wink wink*</div>
+      )}
     </section>
   )
 }
