@@ -1,6 +1,8 @@
+import EmployeesTable from "../../components/BasicTable";
+
 function EmployeesList() {
   return (
-    <div>Employees List</div>
+    <EmployeesTable />
   )
 }
 
