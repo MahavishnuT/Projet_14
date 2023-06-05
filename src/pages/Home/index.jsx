@@ -3,6 +3,7 @@ import { states } from '../../data/USStates'
 import { useDispatch, useSelector } from 'react-redux'
 import { addEmployee, showModal } from '../../redux/redux'
 import { Link } from 'react-router-dom'
+import Modal from '../../components/Modal/modal'
 
 function Home() {
   const dispatch = useDispatch()
@@ -43,12 +44,8 @@ function Home() {
 
   return (
     <section>
-      <div className="title">
-        <h1>HRnet</h1>
-      </div>
+      <h2>Create Employee</h2>
       <div className="container">
-        <Link to="/employeesList">View Current Employees</Link>
-        <h2>Create Employee</h2>
         <form action="#" id="create-employee" onSubmit={submitEmployee}>
           <label htmlFor="first-name">First Name</label>
           <input type="text" id="first-name" />
@@ -94,12 +91,11 @@ function Home() {
             <option>Human Resources</option>
             <option>Legal</option>
           </select>
-          <button type="submit">Save</button>
+          <button type="submit" className='save-button'>Save</button>
         </form>
       </div>
-      {selectorModal.isSaved && (
-        <div>Employee saved in the database! *wink wink*</div>
-      )}
+      {selectorModal.isSaved && <Modal />}
+      <Link to="/employeesList">View Current Employees</Link>
     </section>
   )
 }

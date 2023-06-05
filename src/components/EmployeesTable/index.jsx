@@ -4,16 +4,16 @@ import {
   useGlobalFilter,
   usePagination,
 } from 'react-table'
-import MOCK_DATA from '../../data/MOCK_DATA.json'
 import { COLUMNS } from '../Columns/columns'
 import { useMemo } from 'react'
 import './basictable.scss'
 import FilterTable from '../FilteringTable/filterTable.jsx'
-import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function EmployeesTable() {
+  const selector = useSelector((state) => state.employee)
   const columns = useMemo(() => COLUMNS, [])
-  const data = useMemo(() => MOCK_DATA, [])
+  const data = useMemo(() => selector, [])
 
   const tableInstance = useTable(
     {
@@ -46,7 +46,7 @@ function EmployeesTable() {
   const { globalFilter, pageIndex, pageSize } = state
 
   return (
-    <>
+    <div className="table-container">
       <FilterTable filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
@@ -80,7 +80,7 @@ function EmployeesTable() {
           })}
         </tbody>
       </table>
-      <div>
+      <div className='table-navigation'>
         <span>
           Page{' '}
           <strong>
@@ -122,8 +122,7 @@ function EmployeesTable() {
           {'>>'}
         </button>
       </div>
-      <Link to="/">Home</Link>
-    </>
+    </div>
   )
 }
 

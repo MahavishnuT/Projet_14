@@ -7,10 +7,16 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+ $primary-color: #465902;
+ $secondary-color: #B6BF95;
+ $tertiary-color: #667302;
+ $fourth-color: #96A61B;
+ $neutral-color: #f2f2f2;
 
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 /* Sections

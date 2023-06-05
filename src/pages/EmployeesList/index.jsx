@@ -1,8 +1,12 @@
-import EmployeesTable from "../../components/BasicTable";
+import EmployeesTable from '../../components/EmployeesTable'
+import { Link } from 'react-router-dom'
 
 function EmployeesList() {
   return (
-    <EmployeesTable />
+    <section>
+      <EmployeesTable />
+      <Link to="/">Home</Link>
+    </section>
   )
 }
 

@@ -1,11 +1,11 @@
 export const COLUMNS = [
   {
     Header: 'First Name',
-    accessor: 'first_name'
+    accessor: 'firstName'
   },
   {
     Header: 'Last Name',
-    accessor: 'last_name'
+    accessor: 'lastName'
   },
   {
     Header: 'Start Date',

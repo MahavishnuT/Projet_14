@@ -7,16 +7,20 @@ import { Provider } from 'react-redux'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import EmployeesList from './pages/EmployeesList'
 import { store } from './redux/redux'
+import Header from './components/Header/header'
+import Footer from './components/Footer/footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/employeesList" element={<EmployeesList />} />
         </Routes>
+        <Footer />
       </Router>
     </Provider>
   </React.StrictMode>
