@@ -47,7 +47,23 @@ function EmployeesTable() {
 
   return (
     <div className="table-container">
-      <FilterTable filter={globalFilter} setFilter={setGlobalFilter} />
+      <div className="search-pages-container">
+        <span>
+          Show{' '}
+          <select
+            value={pageSize}
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
+            {[10, 25, 50, 100].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>{' '}
+          entries
+        </span>
+        <FilterTable filter={globalFilter} setFilter={setGlobalFilter} />
+      </div>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -80,7 +96,7 @@ function EmployeesTable() {
           })}
         </tbody>
       </table>
-      <div className='table-navigation'>
+      <div className="table-navigation">
         <span>
           Page{' '}
           <strong>
@@ -99,16 +115,7 @@ function EmployeesTable() {
             style={{ width: '50px' }}
           />
         </span>
-        <select
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-        >
-          {[10, 25, 50, 100].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              {pageSize}
-            </option>
-          ))}
-        </select>
+
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
         </button>
