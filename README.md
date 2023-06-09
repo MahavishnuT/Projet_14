@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Wealth-Health
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Convert a **jQuery library to React**
 
-## Available Scripts
+**HRnet** is a human ressource Sass of the **Wealth Health** company.
 
-In the project directory, you can run:
+![logo](./src/assets/wealth-health-logo.jpg)
 
-### `npm start`
+# Convert HRNet jQuery app to a React application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔖 app issues
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ **Create Employee** React page
 
-### `npm test`
+✅ **Employee List** React page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Add a **state management** system
 
-### `npm run build`
+✅ Complete with a consistent **style**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Only manual **tests** are needed
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔖 jQuery plugins issues :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [jQuery **Date Selector Plugin**](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/1)
+- [jQuery **Drop down menus**](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/4)
+- [jQuery **Plugin for data table selection**](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/2)
+- [jQuery **Modal window plugin**](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/3)
 
-### `npm run eject`
+## 🔖 You will transform a **jQuery plugin** of the site **into React** 
+##     For this project, you'll need to install this library:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [react-table](https://www.npmjs.com/package/react-table) : React Table v7
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔭 Clone project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/MahavishnuT/Projet_14
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ☄️ Front-End launching
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In the root directory, use this command line:
 
-### Code Splitting
+```bash
+npm i && npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔌 then open your browser on the port [localhost:3000](http://localhost:3000)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
